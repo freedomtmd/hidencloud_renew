@@ -127,7 +127,7 @@ class WebDavManager:
             log_print("⚠️ 未配置 WebDAV，跳过云端同步")
             return
 
-        log_print("☁️ 正在从 Infinicloud 下载缓存...")
+        log_print("☁️ 正在从 koofr 下载缓存...")
         try:
             res = requests.get(self.full_url, auth=(self.user, self.password), timeout=30)
             if res.status_code == 200:
@@ -145,7 +145,7 @@ class WebDavManager:
         if not self.url or not self.user:
             return
 
-        log_print("☁️ 正在上传最新缓存到 Infinicloud...")
+        log_print("☁️ 正在上传最新缓存到 koofr...")
         try:
             json_str = json.dumps(data, indent=2)
             res = requests.put(
